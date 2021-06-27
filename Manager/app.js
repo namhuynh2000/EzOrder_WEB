@@ -3,9 +3,13 @@ const morgan = require('morgan');
 var exphbs  = require('express-handlebars');
 var path = require('path');
 const route = require('./routes/index');
+const db = require('./config/db/index');
 const { NotExtended } = require('http-errors');
 const app = express();
 const port = 3000;
+
+// Connect to DB
+db.connect();
 
 // Static file
 // app.use(express.static(path.join(__dirname, 'public')));
@@ -27,5 +31,5 @@ app.set('view engine', 'handlebars');
 route(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}`);
 });
