@@ -1,8 +1,18 @@
 class ListController {
     
-    // [GET]/list
-    index(req, res){
-        res.render('list');
+    // [GET]/waiting
+    index_waiting(req, res){
+        res.render('home');
+    }
+
+    // [GET]/preparing
+    index_preparing(req, res){
+        res.render('home');
+    }
+
+    // [GET]/done
+    index_done(req, res){
+        res.render('home');
     }
 
     // [GET]/list/:slug

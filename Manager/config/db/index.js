@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 async function connect(){
 
     try {
-      await mongoose.connect('mongodb+srv://ezoder:tkpm20202021@cluster0.ewaw9.mongodb.net/ezorder-database', {
+      await mongoose.connect('mongodb://localhost:27017/123_test', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         serverSelectionTimeoutMS: 5000
@@ -16,4 +16,8 @@ async function connect(){
     }
 }
 
-module.exports = {connect};
+module.exports = { connect };
+
+// 'mongodb+srv://ezoder:tkpm20202021@cluster0.ewaw9.mongodb.net/ezorder-database'
+
+// mongodb://localhost:27017/123_test

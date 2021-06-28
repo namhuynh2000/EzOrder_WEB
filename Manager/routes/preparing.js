@@ -6,7 +6,7 @@ const listController = require('../controllers/ListController');
 
 
 router.get('/:slug', listController.show);
-router.get('/', listController.index);
+router.get('/', listController.index_preparing);
 
 
 module.exports = router;

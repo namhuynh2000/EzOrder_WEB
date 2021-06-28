@@ -1,9 +1,15 @@
-const listRouter = require('./list');
-const siteRouter = require('./site')
+const siteRouter = require('./site');
+
+const waitingRouter = require('./waiting');
+const preparingRouter = require('./preparing');
+const doneRouter = require('./done');
+
 
 function route(app){
 
-  app.use('/list', listRouter);
+  app.use('/wating', waitingRouter);
+  app.use('/preparing', preparingRouter);
+  app.use('/done', doneRouter);
   app.use('/', siteRouter);
 
 }
