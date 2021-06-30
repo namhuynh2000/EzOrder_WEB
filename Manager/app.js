@@ -8,6 +8,13 @@ const { NotExtended } = require('http-errors');
 const app = express();
 const port = 3000;
 
+var hbs = exphbs.create({
+  helpers:{
+    multi: (a,b) => a*b,
+    sum: (a) => a+1,
+  }
+});
+
 // Connect to DB
 db.connect();
 
@@ -24,7 +31,7 @@ app.use(express.json());
 app.use(morgan('combined'));
 
 // Template engine
-app.engine('handlebars', exphbs());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Route init

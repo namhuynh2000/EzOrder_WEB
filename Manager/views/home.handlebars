@@ -33,18 +33,24 @@
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-		      <a class="navbar-brand" href="index.html"><span class="flaticon-pizza-1 mr-1"></span>Pizza<br><small>Delicous</small></a>
+		      <a class="navbar-brand" href="/"><span class="flaticon-pizza-1 mr-1"></span>EzOrder<br><small>Delicous</small></a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-		        <span class="oi oi-menu"></span> Menu
+		        <span class="oi oi-menu"></span> Home
 		      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+				<li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">List</a>
+                    <div class="dropdown-menu">
+                        <a href="waiting" class="dropdown-item">Waiting</a>
+                        <a href="preparing" class="dropdown-item">Preparing</a>
+                        <a href="done" class="dropdown-item">Done</a>
+						<div class="dropdown-divider"></div>
+  						<a class="dropdown-item" href="pending">Pending</a>
+                    </div>
+                </li>
+	          <li class="nav-item"><a href="menu" class="nav-link">Menu</a></li>
+	          <li class="nav-item"><a href="staff" class="nav-link">Staff</a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -656,51 +662,14 @@
 		    </div>
     	</div>
     </section> --}}
-
+<h1 class="mt-5 d-flex justify-content-center">{{_status}}</h1>
 <main>
   <ol class="gradient-list">
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-    <li>Aenean tincidunt elit at ipsum cursus, vitae interdum nulla suscipit.</li>
-    <li>Curabitur in orci vel risus facilisis accumsan.</li>
-    <li>Morbi eleifend tortor lacinia sapien sagittis, quis pellentesque felis egestas.</li>
-    <li>Aenean viverra dui quis leo lacinia fringilla.</li>
-    <li>Sed varius lectus ac condimentum egestas.</li>
-    <li>Maecenas faucibus lorem nec lorem posuere, a rhoncus velit porttitor.</li>
-    <li>Proin porta arcu ac elit malesuada pulvinar.</li>
-    <li>Phasellus vitae felis sit amet mi gravida volutpat.</li>
-    <li>Curabitur vulputate urna non efficitur interdum.</li>
-    <li>Curabitur dapibus enim in consectetur imperdiet.</li>
-    <li>Suspendisse consectetur nibh non condimentum porta.</li>
-    <li>Ut placerat diam in cursus aliquet.</li>
-    <li>Praesent vitae quam id tortor malesuada viverra ut at elit.</li>
-    <li>Vivamus feugiat justo id volutpat rutrum.</li>
-    <li>Nulla volutpat erat non mauris condimentum, nec consequat elit posuere.</li>
-    <li>Vestibulum eu risus efficitur, porta lacus a, mollis metus.</li>
-    <li>Maecenas finibus arcu vel urna commodo, ac bibendum massa vestibulum.</li>
-    <li>Praesent eleifend leo eget consectetur interdum.</li>
-    <li>Suspendisse et lectus gravida, interdum mauris aliquet, mattis purus.</li>
-    <li>In nec nisl feugiat, blandit odio non, vulputate neque.</li>
-    <li>Sed id felis mollis, bibendum orci a, condimentum augue.</li>
-    <li>Etiam eleifend ipsum nec nibh aliquam, non commodo risus eleifend.</li>
-    <li>Curabitur in ipsum eget lacus blandit maximus in at sem.</li>
-    <li>Curabitur sagittis ante nec libero maximus, ut imperdiet elit egestas.</li>
-    <li>Proin congue felis sed ultrices elementum.</li>
-    <li>Duis sit amet velit et lectus eleifend interdum non quis ex.</li>
-    <li>Praesent congue lectus a felis pharetra malesuada.</li>
-    <li>Sed vel mauris condimentum, egestas dolor eu, porttitor nisl.</li>
-    <li>Donec sed elit tincidunt, accumsan magna sed, facilisis libero.</li>
-    <li>Curabitur vel purus quis justo placerat euismod mollis ac arcu.</li>
-    <li>Sed eget mi et justo luctus mollis ut non augue.</li>
-    <li>Suspendisse sit amet lectus et magna euismod tempor.</li>
-    <li>Vestibulum accumsan velit et ipsum pellentesque, vitae ultricies erat blandit.</li>
-    <li>Pellentesque vel dolor ac risus efficitur convallis.</li>
-    <li>Maecenas feugiat quam at facilisis dapibus.</li>
-    <li>Cras commodo leo sit amet lacus lacinia, eget rutrum sem sodales.</li>
-    <li>Ut sit amet risus finibus, iaculis lectus sit amet, varius lectus.</li>
-    <li>Duis dignissim elit eget erat maximus luctus.</li>
+	{{#each orders}}
+	<li><a href="/{{this._id}}">{{this._id}}</a></li>
+	{{/each}}
   </ol>
 </main>
-
 
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>

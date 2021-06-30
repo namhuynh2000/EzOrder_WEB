@@ -5,7 +5,6 @@ const router = express.Router();
 const listController = require('../controllers/ListController');
 
 
-router.get('/:slug', listController.show);
 router.get('/', listController.index_done);
 
 

@@ -1,12 +1,20 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Order = new Schema({
-    // tableNumber: Number,
-    // menuItem: Array,
-    // note: String,
-    // totalPrice: Number,
-    // status: Number,
+const MenuItem = new Schema({
+    name: String,
+    price: Number,
+    available: Boolean,
+    description: String,
+    type: Number,
 });
 
-module.exports = mongoose.model('Order', Order);
+const Order = new Schema({
+    tableNumber: Number,
+    menuItem: Array(MenuItem),
+    note: String,
+    totalPrice: Number,
+    status: Number,
+});
+
+module.exports = mongoose.model('Order', Order, 'Order');

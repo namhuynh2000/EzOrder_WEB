@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+
+
 module.exports = {
     mutipleMongooseToObject: function (mongooses)
     {
