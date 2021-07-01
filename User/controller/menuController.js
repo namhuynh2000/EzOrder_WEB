@@ -18,16 +18,16 @@ exports.menuPage = async (req, res, next) => {
 }
 
 exports.addToCart = (req, res, next) => {
-    // let menuItemId = req.params.id;
-    // let cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
+    let menuItemId = req.params.id;
+    let cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
 
-    // MenuItem.findById(menuItemId, (err, menuItem) => {
-    //     if (err) {
-    //         return res.redirect('/');
-    //     }
-    //     cart.add(menuItem, menuItem.id,2);
-    //     req.session.cart = cart;
-    //     console.log(req.session.cart);
-    //     return res.redirect('/');
-    // })
+    MenuItem.findById(menuItemId, (err, menuItem) => {
+        if (err) {
+            return res.redirect('/');
+        }
+        cart.add(menuItem, menuItem.id,2);
+        req.session.cart = cart;
+        console.log(req.session.cart);
+        return res.redirect('/');
+    })
 }

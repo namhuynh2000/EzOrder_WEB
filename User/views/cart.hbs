@@ -1,0 +1,82 @@
+{{!-- <link rel="stylesheet" href="/css/style.css"> --}}
+
+<!-- Main wrapper -->
+<div class="wrapper" id="wrapper">
+    {{!-- {{#with cart}} --}}
+    <div class="cart-main-area section-padding--lg bg--white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 ol-lg-12">
+                    <form action="#">
+                        <div class="table-content wnro__table table-responsive">
+                            <table>
+                                <thead>
+                                    <tr class="title-top">
+                                        <th class="product-thumbnail">Hình Ảnh</th>
+                                        <th class="product-name">Sách</th>
+                                        <th class="product-price">Giá</th>
+                                        <th class="product-quantity">Số lượng</th>
+                                        <th class="product-subtotal">Thành tiền</th>
+                                        <th class="product-remove">Xóa</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cart-body">
+                                    {{!-- {{#each items}} --}}
+                                    <d <tr id="item">
+                                        <td class="product-thumbnail"><a href="book-detail/{{item._id}}"><img
+                                                    src="" alt="product img"></a></td>
+                                        <td class="product-name"><a href="book-detail/{{item._id}}"></a>
+                                        </td>
+                                        <td class="product-price"><span class="amount"><sup>đ</sup></span>
+                                        </td>
+
+                                        <td class="product-quantity">
+                                            <input type="button" value="-" class="decreaseVal"
+                                                onclick="decreaseValue('')">
+                                            <input type="number" id="sst" min="1" max="22"
+                                                value="0" class="val quality_item" disabled>
+                                            <input type="button" value="+" class="increaseVal"
+                                                onclick="encreaseValue('')">
+                                        </td>
+
+                                        <td class="product-subtotal" id="price{{item._id}}"><sup>đ</sup></td>
+                                        <td class="product-remove"><a onclick="removeCartItem('')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                        </tr>
+                                        {{!-- {{/each}} --}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                    <div class="cartbox__btn">
+                        <ul
+                            class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
+                            <li><a href="#">Nhận mã giảm giá</a></li>
+                            <li><a href="/book-shop">Tiếp tục mua sắm</a></li>
+                            <li><a onclick="clearCart()">Xóa toàn bộ</a></li>
+                            <li><a onclick="checkQuantity('')">Thanh toán</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 offset-lg-6">
+                    <div class="cartbox__total__area">
+                        <div class="cart__total__amount">
+                            <span>Tổng số tiền: </span>
+                            <span id="total-price"> VNĐ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- {{/with}} --}}
+    <!-- cart-main-area end -->
+    <!-- Footer Area -->
+    <!-- //Footer Area -->
+
+</div>
+<!-- //Main wrapper -->
