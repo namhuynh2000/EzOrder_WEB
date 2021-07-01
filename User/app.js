@@ -25,6 +25,8 @@ let Cart = require('./model/cart');
 
 var app = express();
 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,7 +37,7 @@ app.engine(
     helpers: multihelpers,
     defaultView: "main",
     layoutsDir: __dirname + "/views/layout/",
-    // partialsDir: __dirname + "/views/partials/",
+    partialsDir: __dirname + "/views/partials/",
     runtimeOptions: {
       allowProtoPropertiesByDefault: true,
       allowProtoMethodsByDefault: true,
@@ -73,8 +75,6 @@ app.use((req,res,next) =>{
   next();
 })
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 
 app.use('/', indexRouter);

@@ -1,0 +1,41 @@
+.splash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100vw;
+    height: 119vh;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: open 0.5s ease-in 1.5s forwards;
+}
+
+.logo-splash {
+    position: relative;
+    top: -100px;
+    animation: drop 0.5s ease-in 1s forwards;
+    width: 500px;
+}
+.progress {
+    position: relative;
+    top:-50px;
+    width: 30%;
+}
+@keyframes open {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes drop {
+    to {   
+        transform: translateY(500px);
+    }
+}

@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">TÊN MÓN</th>
+            <th scope="col">SỐ LƯỢNG</th>
+            <th scope="col">ĐƠN GIÁ</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        \{{#each result.menuItem}}
+        <tr>
+            <th>
+                \{{this.name}}
+
+
+            </th>
+            <td><b>\{{this.quantity}}</b></td>
+            <td><b>\{{formatCurrency this.price}}đ</b></td>
+        </tr>
+        \{{/each}}
+    </tbody>
+</table>
+<div class="form-group mb-3">
+    <label for="description">Ghi chú</label>
+    <textarea class="form-control validate" name="description" rows="6" disabled>\{{result.note}}</textarea>
+</div>

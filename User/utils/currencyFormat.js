@@ -12,3 +12,7 @@ module.exports.formatCurrency = (item) =>{
         };
     });
 }
+
+module.exports.formatNumber = (number) =>{
+    return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(number);
+}
