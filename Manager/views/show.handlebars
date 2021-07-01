@@ -41,7 +41,7 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 				<li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">List</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Danh sách</a>
                     <div class="dropdown-menu">
                         <a href="waiting" class="dropdown-item">Waiting</a>
                         <a href="preparing" class="dropdown-item">Preparing</a>
@@ -50,8 +50,8 @@
   						          <a class="dropdown-item" href="pending">Pending</a>
                     </div>
                 </li>
-	          <li class="nav-item"><a href="menu" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="staff" class="nav-link">Staff</a></li>
+	          <li class="nav-item"><a href="menu" class="nav-link">Thực đơn</a></li>
+	          <li class="nav-item"><a href="staff" class="nav-link">Nhân viên</a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -64,17 +64,17 @@
 
           <div class="row slider-text justify-content-center">  {{!-- align-items-center --}}
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
-				<h1 class="mb-3 mt-5 float-left">Table Number:<h1 class="mb-3 mt-5 float-left text-warning">{{order.tableNumber}}</h1></h1>
+				<h1 class="mb-3 mt-5 float-left">Bàn số:<h1 class="mb-3 mt-5 float-left text-warning">{{order.tableNumber}}</h1></h1>
             	<h6 class="mb-3 mt-5 float-right">Id: {{order._id}}</h6>
 				<br>
         <br>
-				<h4 class="mb-3 mt-5 float-left">Status: {{_status}}</h4>
+				<h4 class="mb-3 mt-5 float-left">Trạng thái: {{_status}}</h4>
 				<table class="table table-sm">
 					<thead>
 						<tr>
-						<th class="text-warning" scope="col">Name</th>
-						<th class="text-warning" scope="col">Number</th>
-						<th class="text-warning" scope="col">Money</th>
+            <th class="text-warning" scope="col">Tên món ăn</th>
+						<th class="text-warning" scope="col">Số lượng</th>
+						<th class="text-warning" scope="col">Giá tiền</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -88,7 +88,7 @@
 						{{/each}}
 					</tbody>
 					<th></th>
-					<th>Sum</th>
+					<th>Tổng tiền:</th>
 					<th>{{ totalPrice }}</th>
 					<tr>
 						{{#if note}}
@@ -98,10 +98,10 @@
 					</tr>
 				</table>
 				<form method="POST" action="{{_id}}">
-					<button type="submit" class="btn btn-success float-right">Continue</button>
+					<button type="submit" class="btn btn-success float-right">Tiếp tục</button>
 				</form>
         <form method="POST" action="cancel/{{_id}}">
-					<button type="submit" class="btn btn-danger float-right">Cancel</button>
+					<button type="submit" class="btn btn-danger float-right">Hủy đơn</button>
 				</form>
         {{/with}}
             </div>
