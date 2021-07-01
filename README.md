@@ -18,3 +18,10 @@ npm start
 ```
 2.  Truy cập Browser
 3.  Vào thanh tìm kiếm nhập link 'http://localhost:3000/'
+
+## Note
+- Sử dụng tài khoản sau để đăng nhập vào admin
+
+Username: suhina
+
+Password: 123456
